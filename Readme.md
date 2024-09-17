@@ -19,7 +19,7 @@
 ## q4) Implement sleep
 ### hints
     - in scheduler.cc (in threads) add a list for sleeping processes. neatly define the structure for sleeplist, Instantiate the list and add a function to keep process in that list.
-    - In alarm.cc (in threads) in callback function add logic to remove processes fomr sleeplist after time is over.
+    - In alarm.cc (in threads) in callback function add logic to remove processes from sleeplist after time is over.
     - Write all the function definitions like Mul in all the required files
-    - Finally in ksyscall.h add logic so that current process which should got to sleep doesnt continue.
+    - Finally in ksyscall.h add logic so that current process which should got to sleep will not continue.
     
