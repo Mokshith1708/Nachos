@@ -90,7 +90,7 @@ Thread *Scheduler::FindNextToRun() {
     if (readyList->IsEmpty()) {
         return NULL;
     } else {
-
+         // code added by me starts here
       ListIterator<Thread *> *itr = new ListIterator<Thread *>(readyList);
       Thread *c=nullptr, *c1=nullptr;
       int max = 100;
@@ -109,13 +109,16 @@ Thread *Scheduler::FindNextToRun() {
     
       readyList->Remove(c1);
       return c1;
+      // code added by me ends here
+     //return readyList->RemoveFront();
+
     // Thread *c1;
     // c1 = priorityList.top();
     // priorityList.pop();
     // readyList->Remove(c1);
     //   return c1;
 
-    //return readyList->RemoveFront();
+    
     }
 }
 

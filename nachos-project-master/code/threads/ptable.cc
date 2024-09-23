@@ -19,6 +19,7 @@ PTable::~PTable() {
     }
     delete bmsem;
 }
+// code added by me starts here
 int PTable::ExecUpdate2(char* name,int pri) {
     // Gọi mutex->P(); để giúp tránh tình trạng nạp 2 tiến trình cùng 1 lúc.
     bmsem->P();
@@ -66,7 +67,7 @@ int PTable::ExecUpdate2(char* name,int pri) {
     // Trả về kết quả thực thi của PCB->Exec.
     return pid;
 }
-
+// code added by me ends here
 int PTable::ExecUpdate(char* name) {
     // Gọi mutex->P(); để giúp tránh tình trạng nạp 2 tiến trình cùng 1 lúc.
     bmsem->P();

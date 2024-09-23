@@ -40,7 +40,7 @@ Thread::Thread(char *threadName, bool _has_dynamic_name /*=false*/) {
     stack = NULL;
     status = JUST_CREATED;
     start_time = clock();
-    pri = 10;
+    pri = 10; // code added by me
     for (int i = 0; i < MachineStateSize; i++) {
         machineState[i] = NULL;  // not strictly necessary, since
                                  // new thread ignores contents

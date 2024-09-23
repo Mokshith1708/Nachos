@@ -76,7 +76,7 @@ int PCB::Exec(char* filename, int id) {
     return id;
 }
 
-
+// code added by me starts here
 int PCB::Exec2(char* filename, int id, int pri) {
     // cerr << filename << ' ' << pid << endl;
     multex->P();
@@ -105,7 +105,7 @@ int PCB::Exec2(char* filename, int id, int pri) {
     // Trả về id.
     return id;
 }
-
+// code added by me ends here
 int PCB::GetID() { return thread->processID; }
 
 int PCB::GetNumWait() { return numwait; }
