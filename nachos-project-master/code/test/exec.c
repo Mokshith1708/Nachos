@@ -8,10 +8,21 @@
 
 int main() {
     int pid;
-    pid = Exec("num_io");
+    int i;
+     PrintString("start-In Prog: exec.c\n");
+    pid = Exec2("../test/num_io",0);
+  //   pid = Exec("../test/num_io");
     if (pid < 0) {
         Write("Exec failed: ", 14, stdout);
         PrintNum(pid);
-    } else
-        Join(pid);
+     } //else
+    //     Join(pid);
+
+// code added by me
+  while(1)
+  {
+     for(i=1;i<300000;i++);
+     PrintString("In Prog: exec.c\n");
+    
+  }
 }

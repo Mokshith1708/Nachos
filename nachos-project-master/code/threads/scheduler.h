@@ -12,6 +12,7 @@
 #include "copyright.h"
 #include "list.h"
 #include "thread.h"
+// #include <queue>
 
 // The following class defines the scheduler/dispatcher abstraction --
 // the data structures and operations needed to keep track of which
@@ -43,6 +44,14 @@ class Scheduler {
 
     struct sleepNode* sleepList; /* code added by me */
     // SelfTest for scheduler is implemented in class Thread
+    struct CompareThreads {
+    bool operator()(Thread* thread1, Thread* thread2) {
+        // For max-heap: return true if thread1 should go after thread2
+        return thread1->pri > thread2->pri;
+    }
+    };
+   // priority_queue<Thread *, vector<Thread *>,CompareThreads> priorityList;
+    
 
    private:
     List<Thread*>* readyList;  // queue of threads that are ready to run,

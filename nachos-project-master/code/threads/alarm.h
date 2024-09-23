@@ -21,6 +21,7 @@
 #include "utility.h"
 #include "callback.h"
 #include "timer.h"
+#include <time.h>
 
 
 // The following class defines a software alarm clock.
@@ -32,6 +33,8 @@ class Alarm : public CallBackObj {
 
     void WaitUntil(int x);  // suspend execution until time > now + x
                             // this method is not yet implemented
+   //  time_t time1=0;
+   //  time_t time2=0;
 
    private:
     Timer *timer;  // the hardware timer device

@@ -43,6 +43,16 @@ Alarm::Alarm(bool doRandom) { timer = new Timer(doRandom, this); }
 
 void Alarm::CallBack() {
     // code added by me starts here 
+	// if(time2 ==0 )
+	// {
+    //   time2 = clock();
+	// }
+	// else{
+	// 	time2 = clock();
+	// 	float ans = float(time2-time1)/CLOCKS_PER_SEC;
+	// 	time1 = time2;
+	// 	printf("time taken: %f\n",ans);
+	// }
 	struct sleepNode* temp =kernel->scheduler->sleepList;
 	struct sleepNode* prev = NULL;
 	while(temp != NULL)

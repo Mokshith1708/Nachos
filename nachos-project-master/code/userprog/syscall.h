@@ -50,7 +50,7 @@
 #define SC_GetPid 54
 #define SC_Mul 55
 #define SC_Sleep 56  /* code added by me*/
-
+#define SC_Exec2 57
 #ifndef IN_ASM
 
 /* The system call interface.  These are the operations the Nachos
@@ -83,6 +83,7 @@ int Mul(int, int);
 
 void Sleep(int ticks);
 
+int Exec2(char *exec_name, int pri);
 /* code added by me ends here */
 
 int ReadNum();
@@ -98,6 +99,7 @@ int RandomNum();
 void ReadString(char *buffer, int length);
 
 void PrintString(char *buffer);
+
 
 /* Address space control operations: Exit, Exec, Execv, and Join */
 
