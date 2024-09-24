@@ -10,7 +10,7 @@ int main() {
     int pid;
     int i;
      PrintString("start-In Prog: exec.c\n");
-    pid = Exec2("../test/num_io",0);
+    pid = Exec2("../test/num_io",100);
   //   pid = Exec("../test/num_io");
     if (pid < 0) {
         Write("Exec failed: ", 14, stdout);

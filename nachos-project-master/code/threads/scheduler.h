@@ -12,7 +12,7 @@
 #include "copyright.h"
 #include "list.h"
 #include "thread.h"
-// #include <queue>
+ #include <queue>
 
 // The following class defines the scheduler/dispatcher abstraction --
 // the data structures and operations needed to keep track of which
@@ -50,7 +50,7 @@ class Scheduler {
         return thread1->pri > thread2->pri;
     }
     };
-   // priority_queue<Thread *, vector<Thread *>,CompareThreads> priorityList;
+    priority_queue<Thread *, vector<Thread *>,CompareThreads> priorityList;
     
 
    private:
