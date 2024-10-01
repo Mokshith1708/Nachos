@@ -18,8 +18,9 @@ int main() {
     int pid;
     int i;
     int u =100;
-    PrintString("start-In Prog: num_io.c\n");
-    pid = Exec2("../test/add",11);
+    // PrintString("start-In Prog: num_io.c\n");
+    //  pid = Exec("../test/add");
+    // Wait2(pid);
  //  pid = Exec("../test/add");
     if (pid < 0) {
         Write("Exec failed: ", 14, stdout);

@@ -32,6 +32,7 @@
 
 Scheduler::Scheduler() {
     readyList = new List<Thread *>;
+    waitList = new List<Thread *>;
     sleepList = new sleepNode(); /* code added by me*/
     toBeDestroyed = NULL;
 }
@@ -57,7 +58,7 @@ void Scheduler::ReadyToRun(Thread *thread) {
 
     thread->setStatus(READY);
     readyList->Append(thread);
-    priorityList.push(thread);
+   // priorityList.push(thread);
 }
 
 /* code added by me starts here */
@@ -74,6 +75,42 @@ void Scheduler::ReadyToSleep(Thread *thread,int time)
       // timeLeft = time;
 }
 /* code added by me ends here */
+
+ void Scheduler::ReadyToWait(Thread* thread, int pid)
+ {  
+    thread->waitID = pid;
+    waitList->Append(thread);
+ }
+
+void Scheduler::checkWait(Thread* thread)
+{  //   printf("i am in checkwait start\n");
+     ListIterator<Thread *> *itr = new ListIterator<Thread *>(waitList);
+      Thread *c=nullptr;
+      List<Thread *> *empty = new List<Thread *>();
+      int max = 100;
+      while(!itr->IsDone())
+      {
+        c = itr->Item();
+       //printf("i am in checkwait\n");
+        if(thread->processID == c->waitID)
+        {   
+            kernel->scheduler->ReadyToRun(c);
+        //    printf("i am in checkwait\n");
+            empty->Append(c);
+        }
+        itr->Next();
+      }
+
+      delete itr;
+      itr = new ListIterator<Thread *>(empty);
+
+      while(!itr->IsDone())
+      {
+        waitList->Remove(itr->Item());
+        itr->Next();
+      }
+}
+
 
 
 //----------------------------------------------------------------------
@@ -110,13 +147,13 @@ Thread *Scheduler::FindNextToRun() {
     //   readyList->Remove(c1);
     //   return c1;
       // code added by me ends here
-     //return readyList->RemoveFront();
+     return readyList->RemoveFront();
 
-    Thread *c1;
-    c1 = priorityList.top();
-    priorityList.pop();
-    readyList->Remove(c1);
-      return c1;
+    // Thread *c1;
+    // c1 = priorityList.top();
+    // priorityList.pop();
+    // readyList->Remove(c1);
+    //   return c1;
 
     
     }
@@ -210,4 +247,7 @@ void Scheduler::CheckToBeDestroyed() {
 void Scheduler::Print() {
     cout << "Ready list contents:\n";
     readyList->Apply(ThreadPrint);
+    printf("\nWaitlist:");
+    waitList->Apply(ThreadPrint);
+    printf("\n");
 }

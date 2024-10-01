@@ -9,8 +9,10 @@
 int main() {
     int pid;
     int i;
-     PrintString("start-In Prog: exec.c\n");
-    pid = Exec2("../test/num_io",100);
+    int  u = 10;
+    // PrintString("start-In Prog: exec.c\n");
+    pid = Exec("../test/num_io");
+    Wait2(pid);
   //   pid = Exec("../test/num_io");
     if (pid < 0) {
         Write("Exec failed: ", 14, stdout);
@@ -19,10 +21,11 @@ int main() {
     //     Join(pid);
 
 // code added by me
-  while(1)
+
+  while(u>0)
   {
-     for(i=1;i<300000;i++);
+     for(i=1;i<30;i++);
      PrintString("In Prog: exec.c\n");
-    
+    u--;
   }
 }

@@ -24,7 +24,7 @@ class PCB {
     int Exec2(char *filename, int pid,int pri);// code added by me
     int GetID();
     int GetNumWait();
-
+    Thread* getThr();
     void JoinWait();
     void ExitWait();
     void JoinRelease();

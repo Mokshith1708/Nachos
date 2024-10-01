@@ -51,6 +51,7 @@
 #define SC_Mul 55    /* code added by me*/
 #define SC_Sleep 56  /* code added by me*/
 #define SC_Exec2 57  /* code added by me*/
+#define SC_Wait2 58  /* code added by me*/
 #ifndef IN_ASM
 
 /* The system call interface.  These are the operations the Nachos
@@ -84,6 +85,8 @@ int Mul(int, int);
 void Sleep(int ticks);
 
 int Exec2(char *exec_name, int pri);
+
+void Wait2(int);
 /* code added by me ends here */
 
 int ReadNum();

@@ -41,6 +41,7 @@ Thread::Thread(char *threadName, bool _has_dynamic_name /*=false*/) {
     status = JUST_CREATED;
     start_time = clock();
     pri = 10; // code added by me
+    waitID = -1;
     for (int i = 0; i < MachineStateSize; i++) {
         machineState[i] = NULL;  // not strictly necessary, since
                                  // new thread ignores contents
@@ -237,12 +238,24 @@ void Thread::Sleep(bool finishing) {
     ASSERT(kernel->interrupt->getLevel() == IntOff);
 
     DEBUG(dbgThread, "Sleeping thread: " << name);
+    // if(!finishing)
+    // {
+    // printf("i am not finishing\n");
+    // }
 
+    if(finishing)
+    {   //printf("I came here\n");
+         kernel->scheduler->checkWait(kernel->currentThread);
+        
+        //status = READY;
+    }
     status = BLOCKED;
+    // kernel->scheduler->Print();
     while ((nextThread = kernel->scheduler->FindNextToRun()) == NULL)
+       { //printf("I came here\n");
+        
         kernel->interrupt->Idle();  // no one to run, wait for an interrupt
-
-    // returns when it's time for us to run
+       }
     kernel->scheduler->Run(nextThread, finishing);
 }
 

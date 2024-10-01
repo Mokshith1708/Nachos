@@ -33,6 +33,8 @@ class Scheduler {
 
     void ReadyToRun(Thread* thread);
     void ReadyToSleep(Thread* thread, int time);  /* code added by me */
+    void ReadyToWait(Thread* thread, int pid);
+    void checkWait(Thread* thread);  /* code added by me */
     // Thread can be dispatched.
     Thread* FindNextToRun();  // Dequeue first thread on the ready
                               // list, if any, and return thread.
@@ -43,6 +45,7 @@ class Scheduler {
     void Print();               // Print contents of ready list
 
     struct sleepNode* sleepList; /* code added by me */
+     List<Thread*>* waitList;
     // SelfTest for scheduler is implemented in class Thread
     struct CompareThreads {
     bool operator()(Thread* thread1, Thread* thread2) {
