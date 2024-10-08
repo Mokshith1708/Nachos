@@ -45,7 +45,7 @@ class Scheduler {
     void Print();               // Print contents of ready list
 
     struct sleepNode* sleepList; /* code added by me */
-     List<Thread*>* waitList;
+     List<Thread*>* waitList; /* code added by me*/
     // SelfTest for scheduler is implemented in class Thread
     struct CompareThreads {
     bool operator()(Thread* thread1, Thread* thread2) {

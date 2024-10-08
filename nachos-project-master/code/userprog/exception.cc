@@ -502,9 +502,10 @@ void ExceptionHandler(ExceptionType which) {
                    
                 case SC_Exec2:
                      return handle_SC_Exec2();
-                      /* code added by me ends here */
+                     
                 case SC_Wait2:
                      return handle_SC_Wait2();
+                     /* code added by me ends here */
                 case SC_ReadNum:
                     return handle_SC_ReadNum();
                 case SC_PrintNum:

@@ -32,7 +32,7 @@
 
 Scheduler::Scheduler() {
     readyList = new List<Thread *>;
-    waitList = new List<Thread *>;
+    waitList = new List<Thread *>;/* code added by me*/
     sleepList = new sleepNode(); /* code added by me*/
     toBeDestroyed = NULL;
 }
@@ -76,12 +76,14 @@ void Scheduler::ReadyToSleep(Thread *thread,int time)
 }
 /* code added by me ends here */
 
+/* code added by me starts here */
  void Scheduler::ReadyToWait(Thread* thread, int pid)
  {  
     thread->waitID = pid;
     waitList->Append(thread);
  }
-
+/* code added by me ends here */
+// code added by me starts here
 void Scheduler::checkWait(Thread* thread)
 {  //   printf("i am in checkwait start\n");
      ListIterator<Thread *> *itr = new ListIterator<Thread *>(waitList);
@@ -111,6 +113,7 @@ void Scheduler::checkWait(Thread* thread)
       }
 }
 
+// code added by me ends here.
 
 
 //----------------------------------------------------------------------

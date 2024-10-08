@@ -11,12 +11,12 @@ PTable::PTable(int size) {
     pcb[0] = new PCB(0);
     pcb[0]->parentID = -1;
 }
-
+ /* code added by me starts here */
 Thread* PTable::getThread(int pid)
 {
     return pcb[pid]->getThr();
 }
-
+ /* code added by me ends here */
 PTable::~PTable() {
     int i;
     for (i = 0; i < psize; i++) {
@@ -142,8 +142,8 @@ int PTable::ExitUpdate(int exitcode) {
     // Gọi JoinRelease để giải phóng tiến trình cha đang đợi nó (nếu có)
     // và ExitWait() để xin tiến trình cha cho phép thoát.
     // pcb[id]->JoinRelease();
-    // pcb[id]->ExitWait();
-
+    // pcb[id]->ExitWait(); 
+   // above two lines commented by me.
     Remove(id);
     return exitcode;
 }

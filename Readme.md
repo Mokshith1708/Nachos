@@ -38,3 +38,14 @@
     - Add the function number and function in syscall.h.
     - In ksyscall.h add a function SysExec2 seeing SysExec and cahnge the function call in it to ExecUpdate2(name,pri).
     - In exception.cc add the handle_SC_Exec2() here te change with respect to handle_SC_Exec() is we also need to read priority from reg5 and pass it to SysExec2().   
+
+## q6) Implement Wait2
+### hints
+    - In Scheduler.cc add new wait list and add a function to check whether the wait is over or not
+    - Write all the function definitions like Mul in all the required files.
+    - Add a variable in thread called waitId
+    - In sleep(bool) add a new line to check if program is finishing and call checkwaitlist function from scheduler.
+    - comment these both lines  in ptable
+    // pcb[id]->JoinRelease();
+    // pcb[id]->ExitWait();
+

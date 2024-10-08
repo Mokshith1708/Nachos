@@ -24,7 +24,7 @@ class PTable {
     bool IsExist(int pid);
     void Remove(int pid);
     char* GetFileName(int id);
-    Thread* getThread(int pid);
+    Thread* getThread(int pid);   /* code added by me  */
 };
 
 #endif

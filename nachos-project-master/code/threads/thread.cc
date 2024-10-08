@@ -238,21 +238,15 @@ void Thread::Sleep(bool finishing) {
     ASSERT(kernel->interrupt->getLevel() == IntOff);
 
     DEBUG(dbgThread, "Sleeping thread: " << name);
-    // if(!finishing)
-    // {
-    // printf("i am not finishing\n");
-    // }
-
+    // code added by me starts here
     if(finishing)
-    {   //printf("I came here\n");
+    {   
          kernel->scheduler->checkWait(kernel->currentThread);
-        
-        //status = READY;
     }
     status = BLOCKED;
-    // kernel->scheduler->Print();
+   // code added by me ends here
     while ((nextThread = kernel->scheduler->FindNextToRun()) == NULL)
-       { //printf("I came here\n");
+       { 
         
         kernel->interrupt->Idle();  // no one to run, wait for an interrupt
        }

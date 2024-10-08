@@ -12,7 +12,7 @@ int main() {
     int  u = 10;
     // PrintString("start-In Prog: exec.c\n");
     pid = Exec("../test/num_io");
-    Wait2(pid);
+    //Wait2(pid);
   //   pid = Exec("../test/num_io");
     if (pid < 0) {
         Write("Exec failed: ", 14, stdout);
@@ -22,9 +22,9 @@ int main() {
 
 // code added by me
 
-  while(u>0)
+  while(1)
   {
-     for(i=1;i<30;i++);
+     for(i=1;i<30000;i++);
      PrintString("In Prog: exec.c\n");
     u--;
   }

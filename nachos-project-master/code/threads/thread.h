@@ -92,7 +92,7 @@ class Thread {
     int processID;
     int parrentID;
     int exitStatus;
-    int waitID;
+    int waitID;   //code added by me.
     clock_t start_time;
     int pri;  // code added by me 
     void FreeSpace() {

@@ -47,7 +47,7 @@ int SysExec2(char* name,int pri) {
 
 void SysWait2(int pid)
 {
-  Thread *c = kernel->pTab->getThread(pid);
+  //Thread *c = kernel->pTab->getThread(pid);
 //   int pid2 = kernel->currentThread->processID;
   kernel->scheduler->ReadyToWait(kernel->currentThread,pid);
   

@@ -19,7 +19,7 @@ int main() {
     PrintString("I am Mokshith\n");
  while(1)
   {
-     for(i=1;i<300000;i++);
+     for(i=1;i<30000;i++);
      PrintString("In Prog: add.c\n");
     
   }

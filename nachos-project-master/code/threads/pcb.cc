@@ -7,9 +7,11 @@ PCB::PCB(int id) {
     exitsem = new Semaphore("exitsem", 0);
     multex = new Semaphore("multex", 1);
 }
+ /* code added by me starts here */
  Thread* PCB::getThr(){
     return thread;
  }
+  /* code added by me ends here */
 PCB::~PCB() {
     delete joinsem;
     delete exitsem;
