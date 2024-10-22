@@ -95,8 +95,8 @@ Machine::~Machine() {
 
 void Machine::RaiseException(ExceptionType which, int badVAddr) {
     DEBUG(dbgMach, "Exception: " << exceptionNames[which]);
-
-    registers[BadVAddrReg] = badVAddr;
+    // Added by me.
+    registers[BadVAddrReg] = badVAddr;   
     DelayedLoad(0, 0);  // finish anything in progress
     kernel->interrupt->setStatus(SystemMode);
     ExceptionHandler(which);  // interrupts are enabled at this point

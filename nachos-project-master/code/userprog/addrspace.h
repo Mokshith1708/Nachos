@@ -32,6 +32,7 @@ class AddrSpace {
     void SaveState();     // Save/restore address space-specific
     void RestoreState();  // info on a context switch
 
+    void addPageEntry(unsigned int badVAddr); // added by me for  demand paging.
     // Translate virtual address _vaddr_
     // to physical address _paddr_. _mode_
     // is 0 for Read, 1 for Write.
@@ -42,7 +43,7 @@ class AddrSpace {
                                   // for now!
     unsigned int numPages;        // Number of pages in the virtual
                                   // address space
-
+    char *fileNameMain;    // added by me for  demand paging.
     void InitRegisters();  // Initialize user-level CPU registers,
                            // before jumping to user code
 };

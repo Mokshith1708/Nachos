@@ -222,8 +222,6 @@ void handle_SC_Wait2() {
     return move_program_counter();
 }
 
-
-
 /* code added by me ends here */
 
 void handle_SC_ReadNum() {
@@ -466,6 +464,8 @@ void handle_SC_GetPid() {
     return move_program_counter();
 }
 
+
+
 void ExceptionHandler(ExceptionType which) {
     int type = kernel->machine->ReadRegister(2);
 
@@ -477,6 +477,14 @@ void ExceptionHandler(ExceptionType which) {
             DEBUG(dbgSys, "Switch to system mode\n");
             break;
         case PageFaultException:
+            {
+            // code added by me
+            cout<<"PageExecuption Found"<<endl;
+            unsigned int badVAddr1 = kernel->machine->ReadRegister(39);
+            kernel->currentThread->space->addPageEntry(badVAddr1);
+            return;
+            // code added by me ends here
+            }
         case ReadOnlyException:
         case BusErrorException:
         case AddressErrorException:

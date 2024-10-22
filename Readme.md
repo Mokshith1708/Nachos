@@ -49,3 +49,8 @@
     // pcb[id]->JoinRelease();
     // pcb[id]->ExitWait();
 
+## q7) Imlplement Demand Paging
+### hints
+    - In machine.cc code add this to store the badaddress registers[BadVAddrReg] = badVAddr; (register value - 39)
+    - In exception.cc add few lines to get badaddress and pass it to exception handler function when pagefault occurs.
+    - Add the exception handler function to address.cc and check and comment some lines in constructor.

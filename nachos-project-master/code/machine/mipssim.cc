@@ -124,6 +124,7 @@ void Machine::OneInstruction(Instruction *instr) {
 
     // Fetch instruction
     if (!ReadMem(registers[PCReg], 4, &raw)) return;  // exception occurred
+  //  cout<<"pcreg value:"<<registers[PCReg]<<endl;
     instr->value = raw;
     instr->Decode();
 
