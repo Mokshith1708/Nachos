@@ -124,7 +124,7 @@ void Machine::OneInstruction(Instruction *instr) {
 
     // Fetch instruction
     if (!ReadMem(registers[PCReg], 4, &raw)) return;  // exception occurred
-  //  cout<<"pcreg value:"<<registers[PCReg]<<endl;
+ //  cout<<"pcreg value:"<<registers[PCReg]<<endl;
     instr->value = raw;
     instr->Decode();
 
@@ -145,6 +145,7 @@ void Machine::OneInstruction(Instruction *instr) {
     unsigned int rs, rt, imm;
 
     // Execute the instruction (cf. Kane's book)
+   // cout << "opcode: " << (int)instr->opCode << "\n";
     switch (instr->opCode) {
         case OP_ADD:
             sum = registers[instr->rs] + registers[instr->rt];

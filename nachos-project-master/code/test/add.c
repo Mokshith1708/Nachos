@@ -6,21 +6,25 @@
  */
 
 #include "syscall.h"
- int arr[10] = {10,20};
- char arr1[]="hello world";
+ int arr[10]; //= {10,20};
+//  char arr1[]="hello world";
+//  int sas(){
+//     return 0;
+//  }
 
 int main() {
-    int result1;
-    int result2;
+   // sas();
+    int result1=11;
+    int result2=9;
     int i;
-    char *a = "hello";
+   // char *a = "hello";
     result1 = Add(42, 23);
     result2 = Mul(9, 6);
     PrintNum(result2);
     PrintString("\n");
-    //Sleep(5000000);
+   // Sleep(5000000);
     PrintString("I am Mokshith\n");
-   // PrintNum(arr[0]);
+  // PrintNum(arr[0]);
 
 // while(1);
 //   {
