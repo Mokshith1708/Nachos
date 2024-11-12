@@ -6,6 +6,8 @@
  */
 
 #include "syscall.h"
+#define stdin 0
+#define stdout 1
  int arr[10]; //= {10,20};
 //  char arr1[]="hello world";
 //  int sas(){
@@ -17,6 +19,7 @@ int main() {
     int result1=11;
     int result2=9;
     int i;
+     int pid;
    // char *a = "hello";
     result1 = Add(42, 23);
     result2 = Mul(9, 6);
@@ -25,7 +28,11 @@ int main() {
    // Sleep(5000000);
     PrintString("I am Mokshith\n");
   // PrintNum(arr[0]);
-
+    // pid = Exec("../test/add");
+    // if (pid < 0) {
+    //     Write("Exec failed: ", 14, stdout);
+    //     PrintNum(pid);
+    //  }
 // while(1);
 //   {
 //      for(i=1;i<30000;i++);

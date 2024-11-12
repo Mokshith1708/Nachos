@@ -19,20 +19,20 @@ int main() {
     int i;
     int u =100;
      PrintString("start-In Prog: num_io.c\n");
-      pid = Exec("../test/add");
-      Wait2(pid);
+     // pid = Exec("../test/add");
+     // Wait2(pid);
  //  pid = Exec("../test/add");
-    if (pid < 0) {
-        Write("Exec failed: ", 14, stdout);
-        PrintNum(pid);
-     }
- while(u>0)
- {
+    // if (pid < 0) {
+    //     Write("Exec failed: ", 14, stdout);
+    //     PrintNum(pid);
+    //  }
+//  while(1)
+//  {
   
-  for(i=0;i<1;i++);
-  PrintString("In Prog: num_io.c\n");
-  u--;
- }
+//   for(i=0;i<1;i++);
+//   PrintString("In Prog: num_io.c\n");
+//   u--;
+//  }
 
 
 }

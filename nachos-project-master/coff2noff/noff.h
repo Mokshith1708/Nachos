@@ -19,9 +19,9 @@ typedef struct noffHeader {
    int noffMagic;		/* should be NOFFMAGIC */
    Segment code;		/* executable code segment */ 
    Segment initData;		/* initialized data segment */
-#ifdef RDATA
+ #ifdef RDATA
    Segment readonlyData;	/* read only data */
-#endif
+ #endif
    Segment uninitData;		/* uninitialized data segment --
 				 * should be zero'ed before use 
 				 */

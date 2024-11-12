@@ -272,8 +272,14 @@ void handle_SC_ReadString() {
 void handle_SC_PrintString() {
     int memPtr = kernel->machine->ReadRegister(4);  // read address of C-string
     char* buffer = stringUser2System(memPtr);
+  //  cout<<"hello"<<memPtr<<"----------------------"<<endl;
 
     SysPrintString(buffer, strlen(buffer));
+    // for(int i=0;i<6;i++)
+    // {
+    //     printf("%c\n",buffer[i]);
+    // }
+    // cout<<buffer<<"@@@@@@@@@@@"<<endl;
     delete[] buffer;
     return move_program_counter();
 }
@@ -527,6 +533,7 @@ void ExceptionHandler(ExceptionType which) {
                 case SC_ReadString:
                     return handle_SC_ReadString();
                 case SC_PrintString:
+                    
                     return handle_SC_PrintString();
                 case SC_CreateFile:
                     return handle_SC_CreateFile();

@@ -21,6 +21,7 @@
 #include "machine.h"
 #include "noff.h"
 #include "synch.h"
+#include <bitset>
 
 //----------------------------------------------------------------------
 // SwapHeader
@@ -327,48 +328,79 @@ void AddrSpace::addPageEntry( unsigned int badVAddr)
     NoffHeader noffH;
     unsigned int vpn = badVAddr / PageSize;
 //     pageTable[vpn].virtualPage = vpn; 
-        pageTable[vpn].physicalPage = kernel->gPhysPageBitMap->FindAndSet();
-      
-        // pageTable[vpn].use = FALSE;
-        // pageTable[vpn].dirty = FALSE;
-        // pageTable[vpn].readOnly = FALSE; 
-        // bzero(&(kernel->machine
-        //             ->mainMemory[pageTable[vpn].physicalPage * PageSize]),
-        //       PageSize);
+    pageTable[vpn].physicalPage = kernel->gPhysPageBitMap->FindAndSet();    
 OpenFile *executable = kernel->fileSystem->Open(fileNameMain);
-
 executable->ReadAt((char *)&noffH, sizeof(noffH), 0);
-
+  
+//cout<<noffH.readonlyData.size<<" "<<noffH.readonlyData.virtualAddr<<" :readonly"<<endl;
+//cout<<badVAddr<<" "<<noffH.code.size<<" "<<noffH.code.virtualAddr<<" "<<"hi"<<endl;
+//cout<<badVAddr<<" "<<noffH.initData.size<<" "<<noffH.initData.virtualAddr<<endl;
+// pageTable[vpn].valid = TRUE;
 
 if (noffH.code.size + noffH.code.virtualAddr>badVAddr && badVAddr>=noffH.code.virtualAddr) {
        pageTable[vpn].valid = TRUE;
-      cout<<badVAddr<<" "<<noffH.code.size<<" "<<noffH.code.virtualAddr<<" "<<"hi"<<endl;
-            {
-                executable->ReadAt(
+         int offset = badVAddr%PageSize;
+
+   //   cout<<badVAddr<<" "<<noffH.code.size<<" "<<noffH.code.virtualAddr<<" "<< offset << " hi"<<endl;
+      executable->ReadAt(
                 &(kernel->machine->mainMemory[noffH.code.virtualAddr]) +
                     (pageTable[vpn].physicalPage * PageSize),
                 PageSize, noffH.code.inFileAddr + (vpn * PageSize));
-            }
+      // if (vpn>0)
+    //   {
+    //     executable->ReadAt(
+    //             &(kernel->machine->mainMemory[noffH.code.virtualAddr]) +
+    //                 (pageTable[vpn].physicalPage * PageSize),
+    //             PageSize, noffH.code.inFileAddr + (vpn * PageSize));
+    //   }
+    //   else
+    //         {
+    //             executable->ReadAt(
+    //             &(kernel->machine->mainMemory[noffH.code.virtualAddr]) +
+    //                 (pageTable[vpn].physicalPage * PageSize)+offset,
+    //             PageSize-offset, noffH.code.inFileAddr + (vpn * PageSize));
+    //         }
     }
-   else if (((noffH.initData.size + noffH.initData.virtualAddr) >badVAddr) && (badVAddr>=noffH.initData.virtualAddr) && (noffH.initData.size >0) ) {
+else if (((noffH.initData.size + noffH.initData.virtualAddr) >badVAddr) && (badVAddr>=noffH.initData.virtualAddr) && (noffH.initData.size >0) ) 
+   {
     pageTable[vpn].valid = TRUE;
-    cout<<badVAddr<<" "<<noffH.initData.size<<" "<<noffH.initData.virtualAddr<<endl;
-        {
-            executable->ReadAt(
+   // cout<<badVAddr<<" "<<noffH.initData.size<<" "<<noffH.initData.virtualAddr<<endl;
+    executable->ReadAt(
                 &(kernel->machine->mainMemory[noffH.initData.virtualAddr]) +
                     (pageTable[vpn].physicalPage * PageSize),
                 PageSize, noffH.initData.inFileAddr + (vpn * PageSize));
-        }
+        //    int offset = badVAddr%PageSize;
+        //     int rpn = (badVAddr-noffH.initData.virtualAddr)/PageSize;
+        //    // cout<<"i am mok"<<endl;
+        //      if (rpn>0)
+        //      {
+        //            executable->ReadAt(
+        //         &(kernel->machine->mainMemory[pageTable[vpn].physicalPage * PageSize]),
+        //         PageSize, noffH.initData.inFileAddr + (rpn * PageSize)-offset);
+        //      }
+        //      else
+        // {
+        //     executable->ReadAt(
+        //         &(kernel->machine->mainMemory[pageTable[vpn].physicalPage * PageSize])+offset,
+        //         PageSize-offset, noffH.initData.inFileAddr + (rpn * PageSize));
+        // }
+   }
+else if(((noffH.readonlyData.size + noffH.readonlyData.virtualAddr) >badVAddr) && (badVAddr>=noffH.readonlyData.virtualAddr) && (noffH.readonlyData.size >0))
+    {  
+         pageTable[vpn].valid = TRUE;
+          executable->ReadAt(
+                &(kernel->machine->mainMemory[pageTable[vpn].physicalPage * PageSize]),
+                PageSize, noffH.code.inFileAddr + (vpn * PageSize));  
     }
-    else{
+else{
+       
         pageTable[vpn].valid = TRUE;
-        cout<<badVAddr<<" "<<noffH.initData.size<<" "<<noffH.initData.virtualAddr<<"Uninit"<<endl;
         bzero(&(kernel->machine
                     ->mainMemory[pageTable[vpn].physicalPage * PageSize]),
               PageSize);
     }
-    cout<<noffH.initData.size<<" "<<noffH.initData.virtualAddr <<" "<<badVAddr<<endl;
-   // cout<<noffH.initData.size<<endl;
- //   printf("%u %u\n",noffH.code.virtualAddr, noffH.initData.virtualAddr );
-   // cout<<"everything done added pagetable entry"<<" "<<"vpn value:"<<vpn<<" "<<badVAddr<<endl;
+//    cout<<noffH.initData.size<<" "<<noffH.initData.virtualAddr <<" "<<badVAddr<<endl;
+//    cout<<noffH.initData.size<<endl;
+//    printf("%u %u\n",noffH.code.virtualAddr, noffH.initData.virtualAddr );
+//    cout<<"everything done added pagetable entry"<<" "<<"vpn value:"<<vpn<<" "<<badVAddr<<endl;
     }
