@@ -33,7 +33,7 @@ class Scheduler {
 
     void ReadyToRun(Thread* thread);
     void ReadyToSleep(Thread* thread, int time);  /* code added by me */
-    void ReadyToWait(Thread* thread, int pid);
+    bool ReadyToWait(Thread* thread, int pid);
     void checkWait(Thread* thread);  /* code added by me */
     // Thread can be dispatched.
     Thread* FindNextToRun();  // Dequeue first thread on the ready

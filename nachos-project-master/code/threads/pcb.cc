@@ -35,6 +35,7 @@ void StartProcess_2(void* pid) {
     AddrSpace* space;
     space = new AddrSpace(fileName);
 
+  cout<<"StartProcess_2"<<endl;
     if (space == NULL) {
         printf("\nPCB::Exec: Can't create AddSpace.");
         return;
@@ -73,6 +74,7 @@ int PCB::Exec(char* filename, int id) {
     // Không được sử dụng biến id ở đây, vì biến id là biến cục bộ,
     // nên khi hàm này kết thúc thì giá trị của biến này cũng bị xóa
     // Đừng hỏi tôi đã mất bao lâu để nhận ra điều này :)
+    printf("Forkkking\n");
     this->thread->Fork(StartProcess_2, &this->thread->processID);
 
     multex->V();

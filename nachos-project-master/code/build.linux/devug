@@ -1,0 +1,404 @@
+Time: 10, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+Time: 20, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+Time: 30, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+Starting program in thread: ../test/add, at time: 30
+PageExecuption Found
+0 Bad-addr: 0
+688 0  [Code]
+32 688 [Rdata]
+0 0 [InitData]
+48 720 [UninitData]
+Time: 31, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 0	JAL 140
+Time: 32, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 4	SLL r0,r0,0
+Time: 33, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+PageExecuption Found
+4 Bad-addr: 560
+688 0  [Code]
+32 688 [Rdata]
+0 0 [InitData]
+48 720 [UninitData]
+Time: 34, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 560	ADDIU r29,r29,-40
+Time: 35, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 564	SW r31,36(r29)
+PageExecuption Found
+13 Bad-addr: 1772
+688 0  [Code]
+32 688 [Rdata]
+0 0 [InitData]
+48 720 [UninitData]
+48 ---- 720 1772
+Time: 36, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 564	SW r31,36(r29)
+Time: 37, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 568	SW r30,32(r29)
+Time: 38, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 572	JAL 136
+Time: 39, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 576	ADDU r30,r29,r0
+Time: 40, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 544	JR r0,r31
+Time: 41, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 548	SLL r0,r0,0
+Time: 42, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 580	ADDIU r2,r0,1000
+Time: 43, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 584	LUI r1,0
+Time: 44, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 588	SW r2,720(r1)
+PageExecuption Found
+5 Bad-addr: 720
+688 0  [Code]
+32 688 [Rdata]
+0 0 [InitData]
+48 720 [UninitData]
+48 ---- 720 720
+Time: 45, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 588	SW r2,720(r1)
+Time: 46, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 592	ADDIU r4,r0,42
+Time: 47, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 596	JAL 8
+Time: 48, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 600	ADDIU r5,r0,23
+Time: 49, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 32	ADDIU r2,r0,42
+Time: 50, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 36	SYSCALL
+Time: 51, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 40	JR r0,r31
+Time: 52, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 44	SLL r0,r0,0
+Time: 53, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 604	SW r2,16(r30)
+Time: 54, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 608	ADDIU r4,r0,9
+Time: 55, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 612	JAL 12
+Time: 56, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 616	ADDIU r5,r0,6
+Time: 57, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 48	ADDIU r2,r0,55
+Time: 58, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 52	SYSCALL
+Time: 59, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 56	JR r0,r31
+Time: 60, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 60	SLL r0,r0,0
+Time: 61, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 620	SW r2,20(r30)
+Time: 62, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 624	LW r4,20(r30)
+Time: 63, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 628	JAL 92
+Time: 64, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 632	SLL r0,r0,0
+Time: 65, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+PageExecuption Found
+2 Bad-addr: 368
+688 0  [Code]
+32 688 [Rdata]
+0 0 [InitData]
+48 720 [UninitData]
+Time: 66, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 368	ADDIU r2,r0,44
+Time: 67, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+At PC = 372	SYSCALL
+Time: 77, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100
+End of pending interrupts
+5Time: 87, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100Interrupt handler console write, scheduled at 177
+End of pending interrupts
+Time: 87, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100Interrupt handler console read, scheduled at 100Interrupt handler network recv, scheduled at 100Interrupt handler console write, scheduled at 177
+End of pending interrupts
+Time: 100, interrupts off
+Pending interrupts:
+Interrupt handler console write, scheduled at 177Interrupt handler timer, scheduled at 200Interrupt handler console read, scheduled at 200Interrupt handler network recv, scheduled at 200
+End of pending interrupts
+Time: 187, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200Interrupt handler console read, scheduled at 200Interrupt handler network recv, scheduled at 200
+End of pending interrupts
+Time: 197, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200Interrupt handler console read, scheduled at 200Interrupt handler network recv, scheduled at 200
+End of pending interrupts
+Time: 207, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200Interrupt handler console read, scheduled at 200Interrupt handler network recv, scheduled at 200
+End of pending interrupts
+Time: 217, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 307Interrupt handler console read, scheduled at 307Interrupt handler network recv, scheduled at 307
+End of pending interrupts
+4Time: 217, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 307Interrupt handler console read, scheduled at 307Interrupt handler network recv, scheduled at 307Interrupt handler console write, scheduled at 317
+End of pending interrupts
+Time: 307, interrupts off
+Pending interrupts:
+Interrupt handler console write, scheduled at 317Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+Time: 327, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+Time: 337, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+Time: 338, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 376	JR r0,r31
+Time: 339, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 380	SLL r0,r0,0
+Time: 340, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 636	LUI r4,0
+Time: 341, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 640	SLL r0,r0,0
+Time: 342, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 644	SLL r0,r0,0
+Time: 343, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 648	SLL r0,r0,0
+Time: 344, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 652	SLL r0,r0,0
+Time: 345, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 656	SLL r0,r0,0
+Time: 346, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 660	SLL r0,r0,0
+Time: 347, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 664	SLL r0,r0,0
+Time: 348, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 668	SLL r0,r0,0
+Time: 349, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 672	SLL r0,r0,0
+Time: 350, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 676	SLL r0,r0,0
+Time: 351, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 680	SLL r0,r0,0
+Time: 352, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 684	SLL r0,r0,0
+Time: 353, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 688	SLL r0,r0,0
+Time: 354, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 692	SLL r0,r0,0
+Time: 355, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 696	SLL r0,r0,0
+Time: 356, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 700	SLL r0,r0,0
+Time: 357, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 704	SLL r0,r0,0
+Time: 358, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 708	SLL r0,r0,0
+Time: 359, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 712	SLL r0,r0,0
+Time: 360, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 716	SLL r0,r0,0
+Time: 361, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 407Interrupt handler console read, scheduled at 407Interrupt handler network recv, scheduled at 407
+End of pending interrupts
+At PC = 720	Reserved
+time taken is: 0.006869
+Machine halting!
+
+Ticks: total 361, idle 190, system 110, user 61
+Disk I/O: reads 0, writes 0
+Console I/O: reads 0, writes 2
+Paging: faults 0
+Network I/O: packets received 0, sent 0

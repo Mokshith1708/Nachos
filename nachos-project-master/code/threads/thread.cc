@@ -242,6 +242,8 @@ void Thread::Sleep(bool finishing) {
     if(finishing)
     {   
          kernel->scheduler->checkWait(kernel->currentThread);
+         //kernel->scheduler->
+         cout<<"removed from wait list"<<endl;
     }
     status = BLOCKED;
    // code added by me ends here

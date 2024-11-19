@@ -77,10 +77,16 @@ void Scheduler::ReadyToSleep(Thread *thread,int time)
 /* code added by me ends here */
 
 /* code added by me starts here */
- void Scheduler::ReadyToWait(Thread* thread, int pid)
+ bool Scheduler::ReadyToWait(Thread* thread, int pid)
  {  
+    if(kernel->pTab->IsExist(pid))
+    {
     thread->waitID = pid;
     waitList->Append(thread);
+    return true;
+    }
+   return false;
+
  }
 /* code added by me ends here */
 // code added by me starts here
@@ -95,7 +101,8 @@ void Scheduler::checkWait(Thread* thread)
         c = itr->Item();
        //printf("i am in checkwait\n");
         if(thread->processID == c->waitID)
-        {   
+        {
+            cout << "Adding " << c->processID << endl;   
             kernel->scheduler->ReadyToRun(c);
         //    printf("i am in checkwait\n");
             empty->Append(c);
@@ -107,9 +114,25 @@ void Scheduler::checkWait(Thread* thread)
       itr = new ListIterator<Thread *>(empty);
 
       while(!itr->IsDone())
-      {
+      {  
+        cout<<itr->Item()<<" "<<endl;
         waitList->Remove(itr->Item());
         itr->Next();
+      }
+       printf("i am in checkwait start\n");
+     ListIterator<Thread *> *itr1 = new ListIterator<Thread *>(readyList);
+      while(!itr1->IsDone())
+      {
+        c = itr1->Item();
+        cout<<c->processID<<endl;
+       //printf("i am in checkwait\n");
+        // if(thread->processID == c->waitID)
+        // {   
+        //   //  kernel->scheduler->ReadyToRun(c);
+        // //    printf("i am in checkwait\n");
+        //   //  empty->Append(c);
+        // }
+        itr1->Next();
       }
 }
 

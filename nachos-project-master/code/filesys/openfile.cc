@@ -105,10 +105,13 @@ int OpenFile::ReadAt(char *into, int numBytes, int position) {
     int i, firstSector, lastSector, numSectors;
     char *buf;
 
+    printf("Reading\n");
     if ((numBytes <= 0) || (position >= fileLength)) return 0;  // check request
     if ((position + numBytes) > fileLength) numBytes = fileLength - position;
     DEBUG(dbgFile, "Reading " << numBytes << " bytes at " << position
                               << " from file of length " << fileLength);
+cout<<"Reading " << numBytes << " bytes at " << position
+                              << " from file of length " << fileLength;
 
     firstSector = divRoundDown(position, SectorSize);
     lastSector = divRoundDown(position + numBytes - 1, SectorSize);

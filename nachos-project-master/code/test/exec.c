@@ -24,13 +24,15 @@ int main() {
 
     PrintNum(pid);
 
-   // pid = Exec("../test/num_io");
-    //Wait2(pid);
+    pid = Exec("../test/add");
+    // PrintString()
+    Wait2(pid);
     //pid = Exec("../test/num_io");
-    // if (pid < 0) {
-    //   //  Write("Exec failed: ", 14, stdout);
-    //    PrintNum(pid);
-    // }
+    PrintNum(pid);
+    if (pid < 0) {
+       Write("Exec failed: ", 14, stdout);
+       PrintNum(pid);
+    }
    //  } //else
        // Join(pid);
 

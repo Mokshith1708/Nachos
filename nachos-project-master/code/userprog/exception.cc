@@ -374,7 +374,8 @@ void handle_SC_Exec() {
     virtAddr = kernel->machine->ReadRegister(
         4);  // doc dia chi ten chuong trinh tu thanh ghi r4
     char* name;
-    name = stringUser2System(virtAddr);  // Lay ten chuong trinh, nap vao kernel
+    name = stringUser2System(virtAddr);  
+    // Lay ten chuong trinh, nap vao kernel
     if (name == NULL) {
         DEBUG(dbgSys, "\n Not enough memory in System");
         ASSERT(false);
